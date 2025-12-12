@@ -35,7 +35,7 @@ export default async function NewsPage() {
 
             <div className="space-y-6">
                 {news.map((item) => (
-                    <div key={item.id} className="p-6 rounded-xl shadow-md border border-gray-100 transition hover:shadow-lg">
+                    <div key={item.id} className="bg-white p-6 rounded-xl shadow-md border border-gray-100 transition hover:shadow-lg hover:border-blue-300 transform hover:scale-[1.01]">
                         <h3 className="text-xl font-semibold text-blue-700 mb-2">{item.title}</h3>
                         <p className="text-gray-600 mb-3">{item.content}</p>
                         <p className="text-sm text-gray-400">Дата: {item.date}</p>

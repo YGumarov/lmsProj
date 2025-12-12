@@ -1,5 +1,3 @@
-// lib/mockData.ts
-
 // --- 1. Типы Данных ---
 
 export interface Lesson {
