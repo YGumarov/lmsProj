@@ -31,7 +31,8 @@
 │   │       ├── CourseCard.tsx
 │   │       ├── CourseMapContainer.tsx
 │   │       ├── CourseMapUI.tsx
-│   │       └── LessonNode.tsx
+│   │       ├── LessonNode.tsx
+│   │       └── LessonPlayerUI.tsx
 │   ├── layout
 │   │   ├── Header.tsx
 │   │   └── Sidebar.tsx
@@ -58,4 +59,4 @@
 ├── tree.txt
 └── tsconfig.json
 
-18 directories, 41 files
+18 directories, 42 files

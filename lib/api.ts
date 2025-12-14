@@ -7,31 +7,26 @@ const simulateDelay = (ms = 500) => new Promise(resolve => setTimeout(resolve, m
 
 // Получить список всех курсов
 export async function fetchAllCourses(): Promise<Course[]> {
-    await simulateDelay(800); // Имитация долгого запроса
     return mockCourses;
 }
 
 // Получить список курсов, на которые записан ученик
 export async function fetchMyCourses(): Promise<Course[]> {
-    await simulateDelay(500);
     return mockCourses.filter(course => course.isEnrolled);
 }
 
 // Получить данные конкретного курса по ID
 export async function fetchCourseById(id: number): Promise<Course | undefined> {
-    await simulateDelay(600);
     return mockCourses.find(course => course.id === id);
 }
 
 // Получить данные конкретного урока по ID
 export async function fetchLessonById(courseId: number, lessonId: number): Promise<Lesson | undefined> {
-    await simulateDelay(400);
     const course = mockCourses.find(c => c.id === courseId);
     return course?.lessons.find(lesson => lesson.id === lessonId);
 }
 
 export async function fetchLessonData(courseId: number, lessonId: number) {
-    await simulateDelay(400);
     // 1. Ищем курс
     const course = mockCourses.find(c => c.id === courseId);
     if (!course) return null;

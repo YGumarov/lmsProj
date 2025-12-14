@@ -8,11 +8,11 @@ import {usePathname} from "next/navigation";
 interface SidebarContextType {
     expanded: boolean;
 }
-const SidebarContext = createContext<SidebarContextType>({ expanded: true });
+const SidebarContext = createContext<SidebarContextType>({ expanded: false });
 
 export const Sidebar = () => {
 
-    const [expanded, setExpanded] = useState(true)
+    const [expanded, setExpanded] = useState(false)
 
     return (
         <aside className="h-screen sticky top-0">
