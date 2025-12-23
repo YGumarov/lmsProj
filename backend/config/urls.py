@@ -6,7 +6,7 @@ The `urlpatterns` list routes URLs to views. For more information please see:
 Examples:
 Function views
     1. Add an import:  from my_app import views
-    2. Add a URL to urlpatterns:  path('', views.home, name='home')
+    2. Add a URL to urlpatterns:  path('', views.home, name='home' )
 Class-based views
     1. Add an import:  from other_app.views import Home
     2. Add a URL to urlpatterns:  path('', Home.as_view(), name='home')
@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/health/', health),
     path("api/v1/", include('courses.urls')),
+    path("api/v1/", include('news.urls')), # <-- ЭТО ИЗМЕНЕНИЕ
     path("api/v1/auth/token/", TokenObtainPairView.as_view(), name="token_obtain_pair"),
     path("api/v1/auth/token/refresh/", TokenRefreshView.as_view(), name="token_refresh"),
     path("api/v1/", include("users.urls")),
