@@ -12,7 +12,7 @@ export const Header = () => {
                 </button>
 
                 {/*Glavnaya str*/}
-                <Link href="/" className="text-lg font-semibold text-gray-700 hover:text-blue-600 transition">
+                <Link href="/frontend/public" className="text-lg font-semibold text-gray-700 hover:text-blue-600 transition">
                     Главная
                 </Link>
             </div>
