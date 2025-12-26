@@ -1,9 +1,10 @@
 from rest_framework.decorators import action
 from rest_framework.response import Response
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.viewsets import ReadOnlyModelViewSet
+from rest_framework.viewsets import ModelViewSet
 from django.utils import timezone
 from django.shortcuts import get_object_or_404
+
 
 from .models import Course, Lesson, Enrollment, UserLessonProgress
 from .serializers import (
@@ -11,8 +12,10 @@ from .serializers import (
     LessonSerializer,
 )
 
+from config.permissions import IsAdminOrReadOnly # НОВЫЙ ИМПОРТ
 
-class CourseViewSet(ReadOnlyModelViewSet):
+class CourseViewSet(ModelViewSet): # ИЗМЕНЕНО: ModelViewSet
+    permission_classes = [IsAdminOrReadOnly] # НОВОЕ ПРАВИЛО
     queryset = Course.objects.all()
 
     def get_serializer_class(self):
@@ -46,7 +49,8 @@ class CourseViewSet(ReadOnlyModelViewSet):
         return Response(serializer.data)
 
 
-class LessonViewSet(ReadOnlyModelViewSet):
+class LessonViewSet(ModelViewSet):
+    permission_classes = [IsAdminOrReadOnly]  # НОВОЕ ПРАВИЛО
     serializer_class = LessonSerializer
 
     def get_queryset(self):
